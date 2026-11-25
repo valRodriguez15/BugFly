@@ -78,7 +78,7 @@ def listar_incidentes(
     )
 
 
-@app.post("/incidentes", response_model=Incidente, status_code=201)
+@app.post("/incidentes", response_model=Incidente, status_code=200)
 def crear_incidente(inc: IncidenteCrear, repo: IncidenteRepository = Depends(get_repo)):
     return repo.crear(inc.model_dump(mode="json"))
 
